@@ -38,13 +38,14 @@ def start_bot(message):
     bot.send_photo(message.chat.id, picture_ava)
     bot.send_message(message.chat.id,
                      " Hello, *{0}*\\. {1} Want to visit one of the South Bay Islands? Poets Cove Resort, Spa \\& Marina "
-                     " looks forward to welcoming you".format(message.from_user.first_name, set_phrases[number_send]),
+                     " looks forward to welcoming you\\.".format(message.from_user.first_name, set_phrases[number_send]),
                      reply_markup=keyboards.keyboard_start(),
                      parse_mode="MarkdownV2")
 
 
 @bot.message_handler(content_types=['text'])
 def catalog_bot(message):
+    print("catalog")
     picture_address = open('picture/address.png', 'rb')
     if message.text == "About us \U0001F5C2":
         bot.send_message(message.chat.id, "Select a section", reply_markup=keyboards.keyboard_catalog())
