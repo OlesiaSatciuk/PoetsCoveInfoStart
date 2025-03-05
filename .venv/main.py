@@ -30,7 +30,6 @@ def start_bot(message):
     else:
         bot.send_message(my_admin, str(message.from_user.id))
 
-
     number_send = random.randint(0, 2)
 
     set_phrases = ("Nice to meet you \\.", "Pleased to meet you \\.", "How are you \\?")
